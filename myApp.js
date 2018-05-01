@@ -1,3 +1,13 @@
+var express = require('express');
+var app = express();
+var mongoose = require('mongoose');
+const dotenv = require('dotenv')
+dotenv.config()
+var fs = require('fs');
+var path = require('path');
+var bodyParser = require('body-parser');
+var router = express.Router();
+
 /**********************************************
 * 3. FCC Mongo & Mongoose Challenges
 * ==================================
@@ -11,6 +21,8 @@
 // Add `mongodb` and `mongoose` to the project's `package.json`. Then require 
 // `mongoose`. Store your **mLab** database URI in the private `.env` file 
 // as `MONGO_URI`. Connect to the database using `mongoose.connect(<Your URI>)`
+
+mongoose.connect(process.env.MONGO_URI)
 
 
 /** # SCHEMAS and MODELS #
